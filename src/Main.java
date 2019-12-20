@@ -1,4 +1,9 @@
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,7 +15,59 @@ public class Main {
 //    filterAndCollect();
 //    compareWithJavaMethodCompareTo();
 
+//    handleDate();
 
+    streamMax();
+  }
+
+  private static void streamMax() {
+
+    class MyObject {
+
+      int id;
+      String name;
+
+      public int getId() {
+        return id;
+      }
+
+      public void setId(int id) {
+        this.id = id;
+      }
+
+      public String getName() {
+        return name;
+      }
+
+      public void setName(String name) {
+        this.name = name;
+      }
+    }
+
+    MyObject myObject1 = new MyObject();
+    myObject1.id = 1;
+    myObject1.name = "number 1";
+    MyObject myObject2 = new MyObject();
+    myObject1.id = 2;
+    myObject1.name = "number 2";
+    MyObject myObject3 = new MyObject();
+    myObject1.id = 3;
+    myObject1.name = "number 3";
+
+    List<MyObject> myObjects = Arrays.asList(myObject1, myObject2, myObject3);
+    Optional<MyObject> max = myObjects.stream().max(Comparator.comparingInt(MyObject::getId));
+    System.out
+        .println("myObjects.stream().max(Comparator.comparingInt(MyObject::getId)) : " + max.get().getId() + " " + max.get().getName());
+
+  }
+
+  private static void handleDate() {
+
+    String dayLimit = "10";
+    LocalDate localDate = LocalDate.now().minusDays(Long.parseLong(dayLimit));
+
+    System.out.println("LocalDate.now() : " + LocalDate.now());
+    System.out.println("localDateTime minus dayLimit is : " + localDate);
   }
 
   private static void compareWithJavaMethodCompareTo() {
