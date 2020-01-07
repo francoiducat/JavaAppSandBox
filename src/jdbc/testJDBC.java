@@ -27,6 +27,8 @@ public class testJDBC {
       int personid = rs.getInt("personid");
       logger.log(Level.INFO, String.format("personid : %s ,  lastname : %s ", personid, lastname));
     }
-
+    rs.close();
+    st.close();
+    cx.close();
   }
 }
