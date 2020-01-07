@@ -1,4 +1,4 @@
-package jdbc;
+package main.java.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,7 +16,7 @@ public class testJDBC {
 
   public static void main(String[] args) throws Exception {
     Statement st;
-    Connection cx = DriverManager.getConnection("jdbc:postgresql://localhost/mydb", System.getenv("LOGIN"), System.getenv("PWD"));
+    Connection cx = DriverManager.getConnection("main.java.jdbc:postgresql://localhost/mydb", System.getenv("LOGIN"), System.getenv("PWD"));
 
     st = cx.createStatement();
 
