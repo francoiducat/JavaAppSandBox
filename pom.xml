@@ -17,5 +17,16 @@
       <groupId>postgresql</groupId>
       <version>8.4-702.jdbc4</version>
     </dependency>
+    <dependency>
+      <artifactId>slf4j-api</artifactId>
+      <groupId>org.slf4j</groupId>
+      <version>1.7.30</version>
+    </dependency>
+    <dependency>
+      <artifactId>slf4j-log4j12</artifactId>
+      <groupId>org.slf4j</groupId>
+      <scope>runtime</scope>
+      <version>1.7.30</version>
+    </dependency>
   </dependencies>
 </project>
