@@ -11,16 +11,23 @@ public class Main {
 
   public static void main(String[] args) {
 
+    unicodeChar();
 //    displayHelloWorld();
 //    filterAndCollect();
 //    compareWithJavaMethodCompareTo();
-
-    handleDate();
-
+//    handleDate();
 //    streamMax();
 
   }
 
+  private static void unicodeChar() {
+
+    char myChar = 'x';
+    char myUnicode = '\u0041';
+    System.out.println(myChar);
+    System.out.println(myUnicode);
+
+  }
 
   private static void streamMax() {
 
