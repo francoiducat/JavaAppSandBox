@@ -6,11 +6,6 @@
   <groupId>com.ducatillon</groupId>
   <modelVersion>4.0.0</modelVersion>
   <name>JavaAppSandBox</name>
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
-  <version>1.0-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <artifactId>postgresql</artifactId>
@@ -28,5 +23,23 @@
       <scope>runtime</scope>
       <version>1.7.30</version>
     </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>${junit-platform.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>${junit-platform.version}</version>
+    </dependency>
   </dependencies>
+  <version>1.0-SNAPSHOT</version>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <junit-platform.version>5.3.1</junit-platform.version>
+  </properties>
 </project>

@@ -2,7 +2,6 @@
 Java App SandBox used for playing with java methods
 
 
-
 ## Identifiers
 
 Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
@@ -57,8 +56,16 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
     - 8 bits - 256 patterns (one byte)
 - With 256 different patterns, we can store a number in the range 0..255
     
+## BDD
 
+Behavior Driven Development : describes the expected behavior of software, it's expressive. (Given, When, Then)
 
+Spock : BDD Framework
 
+## Testing Components
 
+### Mocks
+Fake implementation of a class
+### Spy
+Like a mock, but real object is used
 
