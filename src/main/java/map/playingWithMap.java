@@ -36,6 +36,10 @@ public class playingWithMap {
     treeMap.put(1, "entry one");
 
     treeMap.entrySet().forEach(System.out::println);
+
+    for (Map.Entry<Integer, String> entry : treeMap.entrySet()) {
+      System.out.format("%s : %s ", entry.getKey(), entry.getValue());
+    }
   }
 
 

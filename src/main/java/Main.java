@@ -1,3 +1,5 @@
+import inheritence.Animal;
+import inheritence.Dog;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -6,18 +8,50 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import lambdas.MultithreadApp;
 
 public class Main {
 
   public static void main(String[] args) {
 
-    unicodeChar();
+    MultithreadApp mta = new MultithreadApp();
+
+    mta.startThreads();
+
+//    playingWithImplicitConversion();
+//    playingWithInheritance();
+//    unicodeChar();
 //    displayHelloWorld();
 //    filterAndCollect();
 //    compareWithJavaMethodCompareTo();
 //    handleDate();
 //    streamMax();
 
+  }
+
+  private static void playingWithImplicitConversion() {
+
+    int i = 2;
+    int j = 3;
+    int result = i * j;
+
+    System.out.println(i + " * " + j + " = " + result);
+  }
+
+
+  private static void playingWithInheritance() {
+
+    Dog dog = new Dog();
+    dog.setColor("white");
+    dog.bark();
+    Animal animal = new Dog();
+    animal.bark();
+
+    System.out.println();
+
+    System.out.println("dog.getFours() = " + dog.getFours());
+    System.out.println("dog.setColor(\"white\") = " + dog.getColor());
+    System.out.println("animal.getColor() = " + animal.getColor());
   }
 
   private static void unicodeChar() {
@@ -143,6 +177,5 @@ public class Main {
   private static void displayHelloWorld() {
     System.out.println("Hello World!");
   }
-
 
 }
