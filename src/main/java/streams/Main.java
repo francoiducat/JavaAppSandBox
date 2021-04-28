@@ -5,13 +5,39 @@ import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
   public static void main(String[] args) throws IOException {
 
-    readThemAll();
+    // PEEK() Case 1
+//    String three = "three";
+//    System.out.println("three.length() = " + three.length());
+//
+//    Stream.of("one", "two", "three", "four")
+//        .filter(e -> e.length() > 3)
+//        .peek(e -> System.out.println("Filtered value: " + e))
+//        .map(String::toUpperCase)
+//        .peek(e -> System.out.println("Mapped value: " + e))
+//        .collect(Collectors.toList());
+
+    // PEEK() Case 2
+    List<Integer> list = new ArrayList<>();
+    List<Integer> result = Stream.of(1, 2, 3, 4)
+        .peek(x -> list.add(x))
+        .map(x -> x * 2)
+        .filter(x -> x > 8)
+        .collect(Collectors.toList());
+
+    System.out.println(list);
+    System.out.println(result);
+
+    // readThemAll();
     //    doTryCatchFinally();
 //        doTryWithResources();
 //        doTryWithResourcesMulti();

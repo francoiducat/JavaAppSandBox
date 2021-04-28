@@ -57,9 +57,30 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
     - 8 bits - 256 patterns (one byte)
 - With 256 different patterns, we can store a number in the range 0..255
     
-## BDD
+## Access Modifiers
 
-Behavior Driven Development : describes the expected behavior of software, it's expressive. (Given, When, Then)
+![](./src/assets/images/access_modifier_java.png)
+
+### Explanations
+- A **private** member (i) is only accessible within the same class as it is declared.
+- A member with **no access modifier** (j) is only accessible within classes in the same package.
+- A **protected** member (k) is accessible within all classes in the same package and within subclasses in other packages.
+- A **public** member (l) is accessible to all classes (unless it resides in a module that does not export the package it is declared in).
+
+#### Which modifier to choose?
+Access modifiers is a tool to help you to prevent accidentally breaking encapsulation(*). Ask yourself if you intend the member to be something that's internal to the class, package, class hierarchy or not internal at all, and choose access level accordingly.
+
+#### Examples:
+
+
+- A field long internalCounter should probably be private since it's mutable and an implementation detail.
+- A class that should only be instantiated in a factory class (in the same package) should have a package restricted constructor, since it shouldn't be possible to call it directly from outside the package.
+- An internal void beforeRender() method called right before rendering and used as a hook in subclasses should be protected.
+- A void saveGame(File dst) method which is called from the GUI code should be public.
+
+## Behavior Driven Development
+
+BDD describes the expected behavior of software, it's expressive. (Given, When, Then)
 
 Spock : BDD Framework
 

@@ -1,4 +1,4 @@
-package map;
+package streams;
 
 import java.util.Comparator;
 import java.util.HashMap;

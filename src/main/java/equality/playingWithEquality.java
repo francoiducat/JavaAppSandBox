@@ -6,7 +6,7 @@ package equality;
 public class playingWithEquality {
 
   public static void main(String[] args) {
-    case02();
+    case002();
   }
 
   public static void case01() {
@@ -81,7 +81,5 @@ public class playingWithEquality {
     if (float1 == float2) {
       System.out.println("float1 == float2");
     }
-
-
   }
 }
