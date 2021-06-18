@@ -2,6 +2,7 @@ package SpecialCharacters;
 
 
 import java.io.UnsupportedEncodingException;
+import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,13 +11,24 @@ public class RemoveSpecialCharacters {
 
   public static void main(String[] args) throws UnsupportedEncodingException {
 
-    replaceSpecialCharacter(" /++'Je fais du \"vélo\" même quand il faut - 10° dehors ...'. +++++");
+    //replaceSpecialCharacter(" /++'Je fais du \"vélo\" même quand il faut - 10° dehors ...'. +++++");
     //isThereASpecialCharacter("1324ÀRTF");
+
+    getRidOfAccents("Tĥïŝ ĩš â fůňķŷ Šťŕĭńġ");
+  }
+
+  public static void getRidOfAccents(String string) {
+
+    System.out.println(
+        Normalizer
+            .normalize(string, Normalizer.Form.NFD)
+            .replaceAll("[^\\p{ASCII}]", "")
+    );
   }
 
   public static void replaceSpecialCharacter(String string) {
 
-    Pattern p = Pattern.compile("[^a-z0-9.+/\\-*°'\" ]", Pattern.CASE_INSENSITIVE);
+    Pattern p = Pattern.compile("[^a-z0-9.+/\\-*°'\"]", Pattern.CASE_INSENSITIVE);
     Matcher m = p.matcher(string);
     String s = m.replaceAll(" ");
     System.out.println("string = " + s);
