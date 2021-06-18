@@ -10,13 +10,13 @@ public class RemoveSpecialCharacters {
 
   public static void main(String[] args) throws UnsupportedEncodingException {
 
-    ReplaceSpecialCharacter("'Je fais du \"vélo\" même quand il faut - 10° dehors ...'");
+    replaceSpecialCharacter(" /++'Je fais du \"vélo\" même quand il faut - 10° dehors ...'. +++++");
     //isThereASpecialCharacter("1324ÀRTF");
   }
 
-  public static void ReplaceSpecialCharacter(String string) {
+  public static void replaceSpecialCharacter(String string) {
 
-    Pattern p = Pattern.compile("[^a-z0-9.°'\" ]", Pattern.CASE_INSENSITIVE);
+    Pattern p = Pattern.compile("[^a-z0-9.+/\\-*°'\" ]", Pattern.CASE_INSENSITIVE);
     Matcher m = p.matcher(string);
     String s = m.replaceAll(" ");
     System.out.println("string = " + s);
