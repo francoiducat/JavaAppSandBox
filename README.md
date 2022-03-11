@@ -128,6 +128,7 @@ Try With Resources automatically handles the close()`
 
 ### Map
 
+
 | Map Implementation |  Description |
 |---|---|
 | HashMap | no order guaranteed|
@@ -182,7 +183,7 @@ public class MaClasse() {
 | Static Field |  Static Method |
 |---|---|
 | a value not associated with a specific instance | action not tied to a specific instance|
-| All instances access the same value | can access static field only |
+| All instances access the same value | can access static  field only |
 
 Accessible using the class name
 

@@ -3,6 +3,7 @@ package immutability;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openjdk.jol.vm.VM;
 
 /**
  * Created on 02/12/2020.
@@ -10,7 +11,7 @@ import java.util.List;
 public class playingWithImmutability {
 
   public static void main(String[] args) {
-    case02();
+    case05();
   }
 
   public static void case01() {
@@ -43,6 +44,37 @@ public class playingWithImmutability {
     lst1.add("three");
     System.out.println(lst1);
     System.out.println(lst2);
+  }
+
+  public static void case05() {
+
+    String a = "one";
+    String b = "one";
+    String c = new String("one");
+
+    if(a == b) {
+      System.out.println("a == b");
+      System.out.println("The memory address of \"a\" " + VM.current().addressOf(a));
+      System.out.println("The memory address of \"b\" " + VM.current().addressOf(b));
+
+    }
+
+    if(a.equals(b)) {
+      System.out.println("a.equals(b)");
+    }
+
+    String str1 = a.substring(2);
+    String str2 = a.substring(2);
+
+    if (str1 == str2) {
+      System.out.println("str1 == str2");
+    }
+
+    if (str1.equals(str2)) {
+      System.out.println("str1.equals(str2): " +  str1);
+    }
+
+
   }
 
 

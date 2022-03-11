@@ -25,17 +25,6 @@
       <version>8.4-702.jdbc4</version>
     </dependency>
     <dependency>
-      <artifactId>slf4j-api</artifactId>
-      <groupId>org.slf4j</groupId>
-      <version>1.7.30</version>
-    </dependency>
-    <dependency>
-      <artifactId>slf4j-log4j12</artifactId>
-      <groupId>org.slf4j</groupId>
-      <scope>runtime</scope>
-      <version>1.7.30</version>
-    </dependency>
-    <dependency>
       <artifactId>junit-jupiter-api</artifactId>
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
@@ -46,6 +35,22 @@
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
       <version>${junit-platform.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.22</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jol</groupId>
+      <artifactId>jol-core</artifactId>
+      <version>0.10</version>
     </dependency>
   </dependencies>
   <version>1.0-SNAPSHOT</version>

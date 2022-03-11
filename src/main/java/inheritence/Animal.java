@@ -5,15 +5,13 @@ package inheritence;
  */
 public class Animal {
 
-  final int fours = 4;
+  static final int fours = 4;
   int size = 20;
   String color = "black";
 
   public void bark() {
     System.out.println("");
   }
-
-  ;
 
   public int getFours() {
     return fours;

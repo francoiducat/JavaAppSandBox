@@ -8,18 +8,18 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import lambdas.MultithreadApp;
 
 public class Main {
 
   public static void main(String[] args) {
 
-    MultithreadApp mta = new MultithreadApp();
+    //MultithreadApp mta = new MultithreadApp();
+    //mta.startThreads();
 
-    mta.startThreads();
+
 
 //    playingWithImplicitConversion();
-//    playingWithInheritance();
+    playingWithInheritance();
 //    unicodeChar();
 //    displayHelloWorld();
 //    filterAndCollect();
@@ -42,7 +42,7 @@ public class Main {
   private static void playingWithInheritance() {
 
     Dog dog = new Dog();
-    dog.setColor("white");
+    dog.setColor("red");
     dog.bark();
     Animal animal = new Dog();
     animal.bark();
@@ -52,6 +52,7 @@ public class Main {
     System.out.println("dog.getFours() = " + dog.getFours());
     System.out.println("dog.setColor(\"white\") = " + dog.getColor());
     System.out.println("animal.getColor() = " + animal.getColor());
+
   }
 
   private static void unicodeChar() {

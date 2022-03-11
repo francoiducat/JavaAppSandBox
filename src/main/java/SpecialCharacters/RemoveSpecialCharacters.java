@@ -11,10 +11,12 @@ public class RemoveSpecialCharacters {
 
   public static void main(String[] args) throws UnsupportedEncodingException {
 
-    //replaceSpecialCharacter(" /++'Je fais du \"vélo\" même quand il faut - 10° dehors ...'. +++++");
+    //replaceSpecialCharacter(" /++'Je fais du \"vélo\" même quand il fait - 10° dehors ...'. +++++");
     //isThereASpecialCharacter("1324ÀRTF");
 
-    getRidOfAccents("Tĥïŝ ĩš â fůňķŷ Šťŕĭńġ");
+    //getRidOfAccents("Tĥïŝ ĩš â fůňķŷ Šťŕĭńġ");
+    //getRidOfAccents(" /++'Je fais du \"vélo\" même quand il fait - 10° dehors ...'. +++++");
+    getRidOfAccents("À");
   }
 
   public static void getRidOfAccents(String string) {
