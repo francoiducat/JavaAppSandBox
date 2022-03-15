@@ -22,10 +22,10 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
 |  short |  Integer, takes 2 bytes of memory | 0  | 16 bits  |   |
 |  int |  Integer, takes 4 bytes of memory | 0  | 32 bits  |   |
 |  long | Integer, takes 8 bytes of memory  | 0  | 64 bits  |   |
-|  float |  Floating point number | 0,0  | 32 bits  |   |
-|  double | Floating point number  | 0,0  | 64 bits  |   |
-    
-## Unicode 
+|  float |  Floating point number | 0,0  | 32 bits  |  precision of 6 to 7 decimal digits. |
+|  double | Floating point number  | 0,0  | 64 bits  | precision of 15 to 16 decimal digits.  |
+
+## Unicode
 
 - Unicode is a character encoding standard
 - Character encoding is a mapping of binary values to human readable values
@@ -36,7 +36,6 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
 | A | 01000001| U+0041 | \u0041 |
 | B | 01000010| U+0042 | \u0042 |
 | C | 01000011| U+0043 | \u0043 |
-
 
 - Unicode is one of MANY character encoding standards
 - Reference (https://en.wikibooks.org/wiki/Unicode/Character_reference/0000-0FFF)
@@ -56,25 +55,28 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
     - 7 bits - 128 patterns
     - 8 bits - 256 patterns (one byte)
 - With 256 different patterns, we can store a number in the range 0..255
-    
+
 ## Access Modifiers
 
 ![](./src/assets/images/access_modifier_java.png)
 
 ### Explanations
+
 - A **private** member (i) is only accessible within the same class as it is declared.
 - A member with **no access modifier** (j) is only accessible within classes in the same package.
 - A **protected** member (k) is accessible within all classes in the same package and within subclasses in other packages.
 - A **public** member (l) is accessible to all classes (unless it resides in a module that does not export the package it is declared in).
 
 #### Which modifier to choose?
-Access modifiers is a tool to help you to prevent accidentally breaking encapsulation(*). Ask yourself if you intend the member to be something that's internal to the class, package, class hierarchy or not internal at all, and choose access level accordingly.
+
+Access modifiers is a tool to help you to prevent accidentally breaking encapsulation(*). Ask yourself if you intend the member to be
+something that's internal to the class, package, class hierarchy or not internal at all, and choose access level accordingly.
 
 #### Examples:
 
-
 - A field long internalCounter should probably be private since it's mutable and an implementation detail.
-- A class that should only be instantiated in a factory class (in the same package) should have a package restricted constructor, since it shouldn't be possible to call it directly from outside the package.
+- A class that should only be instantiated in a factory class (in the same package) should have a package restricted constructor, since it
+  shouldn't be possible to call it directly from outside the package.
 - An internal void beforeRender() method called right before rendering and used as a hook in subclasses should be protected.
 - A void saveGame(File dst) method which is called from the GUI code should be public.
 
@@ -104,7 +106,6 @@ An ordered sequence of data
 | ReadFrom |   `InputStream` Class and `read` method | `Reader` Class and `read` method |
 | WriteTo |   `OutputStream` Class and `write` method| `Writer` Class and `write` method|
 
-
 ``` 
 Reader reader;
 try {
@@ -128,15 +129,14 @@ Try With Resources automatically handles the close()`
 
 ### Map
 
-
 | Map Implementation |  Description |
 |---|---|
 | HashMap | no order guaranteed|
 | LinkedHashMap | insertion order is preserved |
 | TreeMap | elements are in sorted order by key |
 
-
 Class that maps keys to values using the Collections Framework :
+
 ```
 public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>
 ```
@@ -155,10 +155,82 @@ public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>
 
 Les instances d'une classe sont des objets.
 
-L'instanciation est l'action d'instancier, de créer un objet à partir d'un modèle. Elle est réalisée par la composition de deux opérations : l'allocation et l'initialisation.
+L'instanciation est l'action d'instancier, de créer un objet à partir d'un modèle. Elle est réalisée par la composition de deux opérations :
+l'allocation et l'initialisation.
+
 - L'**allocation** consiste à réserver un espace mémoire au nouvel objet.
 - L'**initialisation** consiste à fixer l'état du nouvel objet
 
+### Encapsulation
+
+Encapsulation is one of the four fundamental OOP concepts. The other three are inheritance, polymorphism, and abstraction.
+
+Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In
+encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current
+class. Therefore, it is also known as data hiding.
+
+To achieve encapsulation in Java:
+
+- Declare the variables of a class as private.
+- Provide public setter and getter methods to modify and view the variables values.
+
+```java
+/* File name : EncapTest.java */
+public class EncapTest {
+
+  private String name;
+  private String idNum;
+  private int age;
+
+  public int getAge() {
+    return age;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getIdNum() {
+    return idNum;
+  }
+
+  public void setAge(int newAge) {
+    age = newAge;
+  }
+
+  public void setName(String newName) {
+    name = newName;
+  }
+
+  public void setIdNum(String newId) {
+    idNum = newId;
+  }
+}
+```
+
+The public setXXX() and getXXX() methods are the access points of the instance variables of the EncapTest class. Normally, these methods are
+referred as getters and setters. Therefore, any class that wants to access the variables should access them through these getters and
+setters.
+
+```java
+/* File name : RunEncap.java */
+public class RunEncap {
+
+  public static void main(String args[]) {
+    EncapTest encap = new EncapTest();
+    encap.setName("James");
+    encap.setAge(20);
+    encap.setIdNum("12343ms");
+
+    System.out.print("Name : " + encap.getName() + " Age : " + encap.getAge());
+  }
+}
+```
+
+Benefits of Encapsulation:
+
+- The fields of a class can be made read-only or write-only.
+- A class can have total control over what is stored in its fields.
 
 ### Polymorphism
 
@@ -187,12 +259,11 @@ public class MaClasse() {
 
 Accessible using the class name
 
-OR 
+OR
 
 `static import` provides short hand for accessing static members without using the class name.
 
 In `java.lang.Math` and other `java.lang classes, `static` modifier is generally used on all methods
-
 
 ## Lambdas
 
@@ -203,7 +274,7 @@ In `java.lang.Math` and other `java.lang classes, `static` modifier is generally
 
 A Functional Interfaces is an interface with a single abstract method and optionally, any number of default and static methods.
 
-Examples : 
+Examples :
 
 | Interface |  Abstract Method |
 |---|---|
@@ -234,7 +305,6 @@ Dependency Injection : this is about dealing with the way objects fulfill their 
 
 Spring Core is a dependency injection container
 
-
 ### Web
 
 #### Web MVC
@@ -247,16 +317,17 @@ Easier to provide proper design (#SeparationOfConcerns #MVC)
 #### Web Flux
 
 Handling web request focusing on streams of data and how they changes.
- 
+
 \#Reactive Programing : Don't wait for change. React for change.
 
 Web requests :
+
 - are executed asynchronously
 - aren't block don't wait (=>better resource utilization))
 
 ### AOP
 
-A way of programming that increases organization of code for concerns that span multiple tiers or layers of an application. 
+A way of programming that increases organization of code for concerns that span multiple tiers or layers of an application.
 
 Spring AOP is used to implement features in Spring. It's a valuable tool for developers to handle cross-cutting concerns
 
@@ -269,6 +340,5 @@ Example : `@Transactional`
 ### Integration
 
 Example : `@RestController`
-
 
 ### Testing

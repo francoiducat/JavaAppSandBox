@@ -1,4 +1,4 @@
-package inheritence;
+package net.ducatillon.javasandbox.inheritence;
 
 /**
  * Created on 02/10/2020.

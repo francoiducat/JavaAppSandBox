@@ -1,7 +1,10 @@
+package net.ducatillon.javasandbox;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import net.ducatillon.javasandbox.testing.Foo;
 import org.junit.jupiter.api.Test;
-import testing.Foo;
+
 
 /**
  * Created on 01/24/2020.
