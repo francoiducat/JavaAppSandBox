@@ -54,7 +54,99 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
     - 6 bits - 64 patterns
     - 7 bits - 128 patterns
     - 8 bits - 256 patterns (one byte)
-- With 256 different patterns, we can store a number in the range 0..255
+- With 256 different patterns, we can store a number in the range 0.255
+
+## Operator precedence
+
+Knowing operator precedence can help you identify which parts of an expression are evaluated first and which parts will follow. Here is an
+operator precedence list from highest precedence to lowest precedence:
+
+| Operator | Precedence | Description |
+|---|---|---|
+| Postfix unary | expr++, expr--| Value change only occurs after overall expression is evaluated | 
+| Prefix unary | ++expr, --expr  | - | 
+| Other unary | +expr, -expr, !expr  | - | 
+| Multiply, Divide, Modulus | * / % | - |
+| Add, Subtract | + - | - |
+| Relational | < > <= >= instanceof | - |
+|  Equality | == != | - |
+| Bitwise AND | & | Both sides must be true. Both sides are tested |
+| Bitwise exclusive OR | ^ | One side must be false and the other side true |
+| Bitwise inclusive OR | &#124; | At least one side must me true. Both sides are tested |
+| Logical AND | && | Both sides must be true. IF LEFT side = false THEN false |
+| Logical OR | &#124;&#124; | At least one side must be true. IF LEFT is true THEN true |
+| Ternary | ? : | - |
+| Assignment | = += -= *= /= %= &= ^= &#124;= <<= >>= >>>= | - |
+
+Unary operators (++, --) operate on a variable in the order in which they are placed.
+
+## Inheritence
+
+![](./src/assets/images/inheritence.jpg)
+
+## Encapsulation
+
+Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In
+encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current
+class. Therefore, it is also known as data hiding.
+
+To achieve encapsulation in Java −
+
+Declare the variables of a class as private.
+
+Provide public setter and getter methods to modify and view the variables values.
+
+## Serialization
+
+Serialization is the conversion of a Java object into a static stream (sequence) of bytes, which we can then save to a database or transfer
+over a network. Use keyword `transient` to ignore class fields during serialization.
+
+Illustration with the `Person` class:
+
+```java
+public class Person implements Serializable {
+
+  private static final long serialVersionUID = 1L;
+  static String country = "ITALY";
+  private int age;
+  private String name;
+  transient int height;
+
+  // getters and setters
+}
+```
+
+Example of saving an object of type Person to a local file, and then reading the value back in
+
+```java
+@Test
+public void whenSerializingAndDeserializing_ThenObjectIsTheSame{
+    throws IOException,ClassNotFoundException{
+    Person person=new Person();
+    person.setAge(20);
+    person.setName("Joe");
+
+    FileOutputStream fileOutputStream
+    =new FileOutputStream("yourfile.txt");
+    ObjectOutputStream objectOutputStream
+    =new ObjectOutputStream(fileOutputStream);
+    objectOutputStream.writeObject(person);
+    objectOutputStream.flush();
+    objectOutputStream.close();
+
+    FileInputStream fileInputStream
+    =new FileInputStream("yourfile.txt");
+    ObjectInputStream objectInputStream
+    =new ObjectInputStream(fileInputStream);
+    Person p2=(Person)objectInputStream.readObject();
+    objectInputStream.close();
+
+    assertTrue(p2.getAge()==person.getAge());
+    assertTrue(p2.getName().equals(person.getName()));
+    }
+```
+
+## Reflexion
 
 ## Access Modifiers
 
