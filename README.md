@@ -80,22 +80,6 @@ operator precedence list from highest precedence to lowest precedence:
 
 Unary operators (++, --) operate on a variable in the order in which they are placed.
 
-## Inheritence
-
-![](./src/assets/images/inheritence.jpg)
-
-## Encapsulation
-
-Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In
-encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current
-class. Therefore, it is also known as data hiding.
-
-To achieve encapsulation in Java −
-
-Declare the variables of a class as private.
-
-Provide public setter and getter methods to modify and view the variables values.
-
 ## Serialization
 
 Serialization is the conversion of a Java object into a static stream (sequence) of bytes, which we can then save to a database or transfer
@@ -172,22 +156,6 @@ something that's internal to the class, package, class hierarchy or not internal
 - An internal void beforeRender() method called right before rendering and used as a hook in subclasses should be protected.
 - A void saveGame(File dst) method which is called from the GUI code should be public.
 
-## Behavior Driven Development
-
-BDD describes the expected behavior of software, it's expressive. (Given, When, Then)
-
-Spock : BDD Framework
-
-## Testing Components
-
-### Mocks
-
-Fake implementation of a class
-
-### Spy
-
-Like a mock, but real object is used
-
 ## Streams
 
 An ordered sequence of data
@@ -253,7 +221,21 @@ l'allocation et l'initialisation.
 - L'**allocation** consiste à réserver un espace mémoire au nouvel objet.
 - L'**initialisation** consiste à fixer l'état du nouvel objet
 
-### Encapsulation
+### Polymorphism
+
+Polymorphism allows to use a parent class reference to refer to a child class object. For example:
+
+```
+public abstract class Animal{...}
+public class Dog extends Animal{...}
+Animal animal = new Dog();
+```
+
+## Inheritence
+
+![](./src/assets/images/inheritence.jpg)
+
+## Encapsulation
 
 Encapsulation is one of the four fundamental OOP concepts. The other three are inheritance, polymorphism, and abstraction.
 
@@ -323,16 +305,6 @@ Benefits of Encapsulation:
 
 - The fields of a class can be made read-only or write-only.
 - A class can have total control over what is stored in its fields.
-
-### Polymorphism
-
-Polymorphism allows to use a parent class reference to refer to a child class object. For example:
-
-```
-public abstract class Animal{...}
-public class Dog extends Animal{...}
-Animal animal = new Dog();
-```
 
 ### Static members
 
@@ -434,3 +406,19 @@ Example : `@Transactional`
 Example : `@RestController`
 
 ### Testing
+
+## Behavior Driven Development
+
+BDD describes the expected behavior of software, it's expressive. (Given, When, Then)
+
+Spock : BDD Framework
+
+## Testing Components
+
+### Mocks
+
+Fake implementation of a class
+
+### Spy
+
+Like a mock, but real object is used
