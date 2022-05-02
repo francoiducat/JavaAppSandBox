@@ -1,15 +1,15 @@
 package net.ducatillon.javasandbox.streams;
 
-import java.util.Arrays;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import net.ducatillon.javasandbox.streams.data.Item;
 import net.ducatillon.javasandbox.streams.data.Parcel;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 @Slf4j
 public class PlayingWithFlatMap {
-
 
     private void playingWithFlatMap() {
 

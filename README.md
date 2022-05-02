@@ -6,6 +6,10 @@ Java App SandBox used for playing with java methods
 
 Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
 
+# Java
+
+Java does NOT allow Operator Overloading.
+
 ## Variables Primitives
 
 - Java Primitives variables types : the most efficient variable to use
@@ -14,16 +18,21 @@ Allowed : MyClass, MY_CLASS, $MyClass, MyClass_123
 - Primitives require less memory to store
 - Primitives are more efficient to retrieve
 
-|  Primitive |  Description | Default  | Size   |  Range |
-|---|---|---|---|---|
-|  boolean | True or False  |  | 1  bit | True or False   |
-|  byte |  Integer, takes 1 byte of memory | 0  | 8 bits  | -127 to 128  |
-|  char |  Unicode character | \u0000  | 16 bits  |  ASCII values 0 to 256 |
-|  short |  Integer, takes 2 bytes of memory | 0  | 16 bits  |   |
-|  int |  Integer, takes 4 bytes of memory | 0  | 32 bits  |   |
-|  long | Integer, takes 8 bytes of memory  | 0  | 64 bits  |   |
-|  float |  Floating point number | 0,0  | 32 bits  |  precision of 6 to 7 decimal digits. |
-|  double | Floating point number  | 0,0  | 64 bits  | precision of 15 to 16 decimal digits.  |
+|  Primitive |  Description | Default | Size   | Range                                                                   |
+|---|---|---------|---|-------------------------------------------------------------------------|
+|  boolean | True or False  |         | 1  bit | True or False                                                           |
+|  byte |  Integer, takes 1 byte of memory | 0       | 8 bits  | -127 to 128                                                             |
+|  char |  Unicode character | \u0000  | 16 bits  | ASCII values 0 to 65535 <br/> Unicode values from '\u0000' to ‘\uffff'. |
+|  short |  Integer, takes 2 bytes of memory | 0       | 16 bits  |                                                                         |
+|  int |  Integer, takes 4 bytes of memory | 0       | 32 bits  |                                                                         |
+|  long | Integer, takes 8 bytes of memory  | 0L      | 64 bits  |                                                                         |
+|  float |  Floating point number | 0,0     | 32 bits  | precision of 6 to 7 decimal digits.                                     |
+|  double | Floating point number  | 0,0     | 64 bits  | precision of 15 to 16 decimal digits.                                   |
+
+String is not a primitive. Its default value is `null`
+
+    int num = (int) 1L; // OK
+    int num = 1L;  // NOK
 
 ## Unicode
 
