@@ -1,11 +1,13 @@
 package net.ducatillon.javasandbox.core;
 
+import java.util.ArrayList;
+
 public class playingWithCoreJavaApis {
 
     public static void main(String[] args) {
-
         playingWithString();
         playingWithStringBuilder();
+        playingWithArraysList();
     }
 
     public static void playingWithString() {
@@ -17,6 +19,9 @@ public class playingWithCoreJavaApis {
         System.out.println("str.substring(7)): " + str.substring(7));
         boolean var = "ABC".startsWith("a");
         System.out.println("\"ABC\".startsWith(\"a\") : " + var);
+        System.out.println("new String(): " + "_" + new String() + "_");
+
+
     }
 
     public static void playingWithStringBuilder() {
@@ -34,7 +39,17 @@ public class playingWithCoreJavaApis {
         int ids[], types;
         int length = values.length;
         int index2 = values[2];
-
+        String[] names = new String[2];
+        int[][] differentSizes = {{1, 4}, {3}, {9, 8, 7}};
     }
 
+    public static void playingWithArraysList() {
+        ArrayList list1 = new ArrayList();
+        ArrayList list2 = new ArrayList(1);
+        list2.add(2);
+        list2.add(3);
+        System.out.println("list2: " + list2);
+        Integer integer = Integer.valueOf("2");
+        int parseInt = Integer.parseInt("1");
+    }
 }
