@@ -20,14 +20,14 @@ Java does NOT allow Operator Overloading.
 
 |  Primitive |  Description | Default | Size   | Range                                                                   |
 |---|---|---------|---|-------------------------------------------------------------------------|
-|  boolean | True or False  |         | 1  bit | True or False                                                           |
-|  byte |  Integer, takes 1 byte of memory | 0       | 8 bits  | -127 to 128                                                             |
+|  boolean | True or False  | false   | 1  bit | True or False                                                           |
+|  byte |  Integer, takes 1 byte of memory | 0       | 8 bits  | -128 to 127                                                             |
 |  char |  Unicode character | \u0000  | 16 bits  | ASCII values 0 to 65535 <br/> Unicode values from '\u0000' to ‘\uffff'. |
 |  short |  Integer, takes 2 bytes of memory | 0       | 16 bits  |                                                                         |
 |  int |  Integer, takes 4 bytes of memory | 0       | 32 bits  |                                                                         |
 |  long | Integer, takes 8 bytes of memory  | 0L      | 64 bits  |                                                                         |
-|  float |  Floating point number | 0,0     | 32 bits  | precision of 6 to 7 decimal digits.                                     |
-|  double | Floating point number  | 0,0     | 64 bits  | precision of 15 to 16 decimal digits.                                   |
+|  float |  Floating point number | 0.0f    | 32 bits  | precision of 6 to 7 decimal digits.                                     |
+|  double | Floating point number  | 0.0     | 64 bits  | precision of 15 to 16 decimal digits.                                   |
 
 String is not a primitive. Its default value is `null`
 
