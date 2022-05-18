@@ -1,5 +1,9 @@
 package net.ducatillon.javasandbox.cli;
 
+import net.ducatillon.javasandbox.list.PlayingWithList;
+
+import java.util.List;
+
 /*
 
  # STEP 1 : Create class File
@@ -21,7 +25,11 @@ package net.ducatillon.javasandbox.cli;
 
 public class Zoo {
   public static void main(String[] args) {
-    System.out.println("Zoo Entry point : " + args[0]);
+    List<String> stringList = List.of("one", "two", "three");
+    String[] go = {"1"};
+    PlayingWithList.main(go);
+    //System.out.println("Zoo Entry point : " + args[0]);
+    System.out.println("stringList = " + stringList);
   }
 }
 

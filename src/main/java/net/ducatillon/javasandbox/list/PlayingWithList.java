@@ -31,8 +31,8 @@ public class PlayingWithList {
 
     List<Integer> sizes = new ArrayList<>();
     sizes.add(null);
-    int firstSize = sizes.get(0);
-    System.out.println(firstSize);
+    //int firstSize = sizes.get(0); throws null pointer
+    //System.out.println(firstSize);
 
   }
 }

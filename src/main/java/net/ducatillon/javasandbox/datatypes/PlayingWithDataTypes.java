@@ -2,8 +2,18 @@ package net.ducatillon.javasandbox.datatypes;
 
 public class PlayingWithDataTypes {
 
+  static String test;
+  // var jobi = "jobi"; forbidden
+
+  {
+    var jo = "jo";
+  } // allowed in initializer block
+
   public static void main(String[] args) {
     max();
+    System.out.println("test = " + test);
+
+    long autoboxing = 123;
 
     float egg = (float) 2.0 / 9;
 
@@ -11,8 +21,14 @@ public class PlayingWithDataTypes {
     short hamster = 3;
     short capybara = (short) (mouse * hamster);
 
+    var binary = 0B0;
+    System.out.println("binary: " + binary + " is of class: " + ((Object) binary).getClass().getName()); // Integer
+
+    var hexa = 0xff;
+    System.out.println("hexa: " + hexa + " is of class: " + ((Object) binary).getClass().getName()); // Integer
+
     int hair = (short) 2;
-    System.out.println(((Object) hair).getClass().getName());
+    System.out.println("hair: " + ((Object) hair).getClass().getName()); // Integer
 
     var _var = 1L;
     System.out.println(((Object) _var).getClass().getName());
