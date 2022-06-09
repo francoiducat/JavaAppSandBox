@@ -57,6 +57,10 @@ public class PlayingWithDataTypes {
   }
 
   public static void max() {
+    int num;
+    num = 0;
+    num = 1;
+
     long max = 2147483647;
     Byte b = (byte) (Byte.MAX_VALUE + 1);
     System.out.println(b);

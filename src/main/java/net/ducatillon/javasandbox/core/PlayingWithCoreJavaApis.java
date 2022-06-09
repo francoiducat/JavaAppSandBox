@@ -4,16 +4,36 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class playingWithCoreJavaApis {
+public class PlayingWithCoreJavaApis {
+
+    static {
+        System.out.println("Hello static");
+    }
+
+    {
+        System.out.println("Hello instance");
+    }
 
     static int[] var;
 
     public static void main(String[] args) {
-        playingWithListOfArraysAsList();
-        playingWithArrays();
-        playingWithString();
-        playingWithStringBuilder();
-        playingWithArraysList();
+        varargs(2, 2);
+        varargs(new int[]{1, 2});
+
+//       playingWithBlock();
+//        playingWithListOfArraysAsList();
+//        playingWithArrays();
+//        playingWithString();
+//        playingWithStringBuilder();
+//        playingWithArraysList();
+    }
+
+    public static void playingWithBlock() {
+        System.out.println("Hello method");
+    }
+
+    public static void varargs(int... args) {
+        System.out.println("Hello varargs method");
     }
 
     public static void playingWithString() {
