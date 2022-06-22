@@ -55,7 +55,10 @@ public class PlayingWithList {
     //int firstSize = sizes.get(0); throws null pointer
     System.out.println("sizes: " + sizes.get(0));
 
-    //List<String> stringList = List.of(null);
-    ///System.out.println("List.of(null): " + stringList);
+    // List<String> stringList = List.of(null);
+    // System.out.println("List.of(null): " + stringList);
+
+    ArrayList<String> values = new ArrayList<>();
+    List<String> values1 = new ArrayList<>();
   }
 }
