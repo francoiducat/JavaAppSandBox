@@ -13,7 +13,6 @@ public class Zoo {
         t.serialNumber = serialNumber;
         return t;
     }
-
     private interface Paper {
         public String getId();
     }

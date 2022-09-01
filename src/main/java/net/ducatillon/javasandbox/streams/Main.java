@@ -6,7 +6,6 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,6 +13,11 @@ import java.util.stream.Stream;
 public class Main {
 
   public static void main(String[] args) throws IOException {
+
+    List<String> letters = List.of("a", "b", "c");
+    final Stream<String> stream = letters.stream();
+    stream.findFirst();
+    stream.findFirst();
 
     // PEEK() Case 1
 //    String three = "three";

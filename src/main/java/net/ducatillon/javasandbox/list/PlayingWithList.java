@@ -2,6 +2,7 @@ package net.ducatillon.javasandbox.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,19 +10,40 @@ import java.util.List;
  */
 public class PlayingWithList {
 
-  public static void main(String[] args) {
-    List<Integer> myList = Arrays.asList(1, 5, 8, 13);
+    public static void main(String[] args) {
+        List<Integer> myList = Arrays.asList(1, 5, 8, 13);
 
-    myList.parallelStream().forEach(i -> System.out.print(i + " "));
+        myList.parallelStream().forEach(i -> System.out.print(i + " "));
 
-    list();
-    listWithNull();
-  }
+//    list();
+//    listWithNull();
 
-  static void list() {
-    List<Integer> list1 = Arrays.asList(1, 2);
-    list1.set(1, 10); // OK
-    System.out.println("list1: " + list1);
+        compareList();
+
+        List<String> theList = Arrays.asList("toto");
+
+        boolean contains = theList.contains(null);
+
+        System.out.println("contains" + contains);
+    }
+
+    static void compareList() {
+
+        ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "f"));
+        ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "c", "f", "d"));
+
+
+        Collections.sort(listOne);
+        Collections.sort(listTwo);
+
+        boolean equals = listOne.equals(listTwo);
+        System.out.println("lists are equal: " + equals);
+    }
+
+    static void list() {
+        List<Integer> list1 = Arrays.asList(1, 2);
+        list1.set(1, 10); // OK
+        System.out.println("list1: " + list1);
 
 //    List<Integer> list2 = List.of(1, 2, 3);
 //    list2.set(1, 10); // Fails with UnsupportedOperationException

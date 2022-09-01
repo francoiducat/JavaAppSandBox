@@ -3,7 +3,7 @@ package net.ducatillon.javasandbox.classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PassByValueByReference {
+public class PassByValue {
 
     static List<String> stringList = new ArrayList<>();
 

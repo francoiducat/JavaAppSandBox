@@ -3,7 +3,7 @@ package net.ducatillon.javasandbox.classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayingWithOverloadingOverriding {
+public class PlayingWithOverloading {
 
     public static void main(String[] args) {
 
@@ -18,7 +18,9 @@ public class PlayingWithOverloadingOverriding {
     public void fly(List<Long> longs) {
     }
 
+//  public void fly(List<String> longs) {} // Does not compile
+
     public void fly(ArrayList<Long> longs) {
     }
-    //public void fly(long[] longs){} // Does not compile
+    //public void fly(long[] longs){}
 }
