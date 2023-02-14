@@ -1,14 +1,12 @@
 package net.ducatillon.javasandbox.streams.data;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 @Data
 @Builder
 @AllArgsConstructor
 @ToString
+@NoArgsConstructor
 public class Item {
-  public String name;
+  private String name;
 }
