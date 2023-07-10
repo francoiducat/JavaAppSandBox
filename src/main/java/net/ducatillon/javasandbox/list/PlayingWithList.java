@@ -11,6 +11,9 @@ import java.util.List;
 public class PlayingWithList {
 
     public static void main(String[] args) {
+
+        listOf();
+
         List<Integer> myList = Arrays.asList(1, 5, 8, 13);
 
         myList.parallelStream().forEach(i -> System.out.print(i + " "));
@@ -73,14 +76,23 @@ public class PlayingWithList {
     for (int age : ages) System.out.println("age: " + age); // NullPointerException
 
     List<Integer> sizes = new ArrayList<>();
-    sizes.add(null);
-    //int firstSize = sizes.get(0); throws null pointer
-    System.out.println("sizes: " + sizes.get(0));
+      sizes.add(null);
+      //int firstSize = sizes.get(0); throws null pointer
+      System.out.println("sizes: " + sizes.get(0));
 
-    // List<String> stringList = List.of(null);
-    // System.out.println("List.of(null): " + stringList);
+      // List<String> stringList = List.of(null);
+      // System.out.println("List.of(null): " + stringList);
 
-    ArrayList<String> values = new ArrayList<>();
-    List<String> values1 = new ArrayList<>();
+      ArrayList<String> values = new ArrayList<>();
+      List<String> values1 = new ArrayList<>();
   }
+
+    static void listOf() {
+
+        List<Object> listOfObjects = List.of();
+        listOfObjects.add(1);
+        listOfObjects.add(2);
+        System.out.println(listOfObjects);
+
+    }
 }
